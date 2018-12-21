@@ -6,14 +6,14 @@
  *
  * this.$API.Login()
  */
-import {get, post} from './http'
+import service from './http'
 
 export default {
-  POST (link) {
-    return post(link)
+  post (url, data, config) {
+    return service.post(url, data, config)
   },
-  GET (link) {
-    return get(link)
+  get (url,config) {
+    return service.get(url,config)
   }
 }
 

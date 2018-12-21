@@ -33,12 +33,15 @@
         </div>
       </div>
     </div>
+    <!-- 测试全局链接 -->
+    <div class="zb">
+      <el-button type="success" @click="test">成功按钮</el-button>
+    </div>
   </div>
 </template>
 
 <script>
 import Banner from '~/components/Videobanner.vue'
-
 export default {
   components: {
     Banner
@@ -117,6 +120,33 @@ export default {
       iLeft <= maxLeft && (iLeft = maxLeft)
       oUl.style.left = iLeft + 'px'
     },
+    test() {
+      const params = {
+        object: {
+          language: 0,
+          type: '智造资讯'
+        },
+        orderBy: 'date',
+        pageIndex: 1,
+        pageSize: 3
+      }
+      this.$API.post('api/zhizZix/list', params).then((res)=> {
+          console.log(res)
+        })
+        .catch(() => {
+          this.loading = false
+          this.$message.error('用户名或密码错误')
+        })
+      // this.$alert('这是一段内容', '标题名称', {
+      //     confirmButtonText: '确定',
+      //     callback: action => {
+      //       this.$message({
+      //         type: 'info',
+      //         message: this.$baseUrl
+      //       });
+      //     }
+      //   });
+    }
   }
 }
 </script>
@@ -202,5 +232,8 @@ export default {
       background-color: rgba(18, 147, 253, 0.6);
     }
   }
+}
+.zb {
+  height: 200px;
 }
 </style>

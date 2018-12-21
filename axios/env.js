@@ -2,26 +2,18 @@
  * 配置编译环境和线上环境之间的切换
  *
  * baseUrl: 域名地址
- * routerMode: 路由模式
- * imgBaseUrl: 图片所在域名地址
- *
+ *可加其他变量控制
  */
 
 let baseUrl
-let routerMode
-const imgBaseUrl = 'https://fuss10.elemecdn.com'
 
 if (process.env.NODE_ENV === 'dev') {
-  baseUrl = 'https://api.github.com/'
-  routerMode = 'hash'
+  baseUrl = 'https://www.cosmoplat.com/'
 } else {
-  baseUrl = 'https://api.github.com/'
-  routerMode = 'hash'
+  baseUrl = 'http://pass.managerserver.dev.cosmoplat.com'
 }
 
 export {
-  baseUrl,
-  routerMode,
-  imgBaseUrl
+  baseUrl
 }
 
