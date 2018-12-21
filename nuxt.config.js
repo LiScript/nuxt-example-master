@@ -31,18 +31,18 @@ module.exports = {
   css: [
     'element-ui/lib/theme-chalk/display.css', // 控制不同设备显示隐藏的样式
     '~assets/css/common.less',
-    'swiper/dist/css/swiper.css',
+    'swiper/dist/css/swiper.css', // 轮播样式
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui',
-    '@/plugins/axios',
-    '@/plugins/vue-lazyload',
+    '@/plugins/element-ui', // element-ui
+    '@/plugins/axios', // axios
+    '@/plugins/vue-lazyload', // 懒加载
     {
-      src: '~/plugins/awesome-swiper',
+      src: '~/plugins/awesome-swiper', // 轮播
       ssr: false
     },
     '~/plugins/svg-icon' // icons
@@ -55,17 +55,17 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios'
   ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    prefix: '/api/',
-    proxy: true // Can be also an object with default options
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-  proxy: {
-    '/api/': { target: 'http://localhost:8081', pathRewrite: {'^/api/': ''} }
-  },
+  // /*
+  // ** Axios module configuration
+  // */
+  // axios: {
+  //   prefix: '/api/',
+  //   proxy: true // Can be also an object with default options
+  //   // See https://github.com/nuxt-community/axios-module#options
+  // },
+  // proxy: {
+  //   '/api/': { target: 'http://localhost:8081', pathRewrite: {'^/api/': ''} }
+  // },
 
   /*
   ** Build configuration
