@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+yarn-error.log
+yarn.lock
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
+
+/.vscode
+.DS_Store
+/mockapi/design/instance.js
+.history/
+.project
+.idea/
+/package-lock.json
