@@ -55,6 +55,7 @@ export default {
   width: 100%;
   height: 40px;
   background: #f6f6f6;
+  margin-top: 50px;
   .leeft {
     padding: 10px 20px;
     font-size: 20px;
@@ -72,7 +73,8 @@ export default {
 }
 .fixedBar {
   position: fixed;
-  top: 60px;
+  top: 0px;
+  margin-top: 0px !important;
   z-index: 999;
   width: 100%;
   height: 40px;
