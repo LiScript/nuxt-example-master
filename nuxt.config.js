@@ -28,7 +28,8 @@ module.exports = {
   */
   css: [
     'element-ui/lib/theme-chalk/display.css', // 控制不同设备显示隐藏的样式
-    '~assets/css/common.less'
+    '~assets/css/common.less',
+    'swiper/dist/css/swiper.css',
   ],
 
   /*
@@ -37,7 +38,11 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/axios',
-    '@/plugins/vue-lazyload'
+    '@/plugins/vue-lazyload',
+    {
+      src: '~/plugins/awesome-swiper',
+      ssr: false
+    }
   ],
 
   /*
@@ -72,7 +77,7 @@ module.exports = {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          // loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
       }
