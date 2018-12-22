@@ -1,6 +1,6 @@
-# Poli-template
+# 基于NUXT的门户模板项目
 
-> Poli
+> (https://nuxtjs.org) 源于个人-Poli
 
 ## Build Setup
 
@@ -18,5 +18,5 @@ $ yarn start
 # generate static project
 $ yarn run generate
 ```
+### 后期补充
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
