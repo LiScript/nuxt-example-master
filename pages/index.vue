@@ -1,6 +1,9 @@
 <template>
   <div>
     <banner/>
+    <div class="banner-down">
+
+    </div>
     <!-- Tabs -->
     <my-tabs :tabList="tabList" :tabIndex="tabIndex" :point_left="point_left" @changeTab="changeTab">
       <keep-alive>
@@ -43,6 +46,7 @@
     </div>
     <Mapblack/>
     <Mapwhite/>
+    <Looperbgimg/>
     <!-- 测试全局链接 -->
     <div class="zb">
       <el-button type="success" @click="test">成功按钮</el-button>
@@ -56,6 +60,7 @@ import Tabs from '~/components/tabs.vue'
 import Mapblack from '~/components/map/map-black.vue'
 import Mapwhite from '~/components/map/map-white.vue'
 import MyTabs from '~/components/tabs.vue'
+import Looperbgimg from '~/components/looperbgimg.vue'
 import One from './indextabs/one.vue'
 import Two from './indextabs/two.vue'
 import Three from './indextabs/three.vue'
@@ -69,7 +74,8 @@ export default {
     one: One,
     two: Two,
     three: Three,
-    four: Four
+    four: Four,
+    Looperbgimg
   },
   data() {
     return {
@@ -220,6 +226,10 @@ export default {
 
 <style lang="scss" scoped>
 // @import '~assets/css/animate.css';
+.banner-down {
+  background: #000000;
+  height: 80px;
+}
 .container-jjfa {
   background: url('../assets/img/index/jjfa-bg.png') no-repeat;
   background-size: 100% 100%;
@@ -305,4 +315,5 @@ export default {
 .zb {
   height: 200px;
 }
+
 </style>
