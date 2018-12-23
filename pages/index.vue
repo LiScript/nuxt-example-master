@@ -1,6 +1,14 @@
 <template>
   <div>
     <banner/>
+    <!-- Tabs -->
+    <my-tabs :tabList="tabList" :tabIndex="tabIndex" :point_left="point_left" @changeTab="changeTab">
+      <keep-alive>
+        <transition enter-active-class="animated fadeIn" mode="out-in">
+          <component :is="currentContent"></component>
+        </transition>
+      </keep-alive>
+    </my-tabs>
     <!-- 解决方案 -->
     <div class="de-container container-jjfa">
       <div>
@@ -44,13 +52,24 @@
 
 <script>
 import Banner from '~/components/Videobanner.vue'
+import Tabs from '~/components/tabs.vue'
 import Mapblack from '~/components/map/map-black.vue'
 import Mapwhite from '~/components/map/map-white.vue'
+import MyTabs from '~/components/tabs.vue'
+import One from './indextabs/one.vue'
+import Two from './indextabs/two.vue'
+import Three from './indextabs/three.vue'
+import Four from './indextabs/four.vue'
 export default {
   components: {
     Banner,
     Mapblack,
-    Mapwhite
+    Mapwhite,
+    MyTabs,
+    one: One,
+    two: Two,
+    three: Three,
+    four: Four
   },
   data() {
     return {
@@ -90,6 +109,40 @@ export default {
           titlep1: '纺机智慧运维方案',
           titlep2:
             '纺织厂目前面临人工现场设备困难，维护成本不断增加，用户对设备的维护要求不断提升的现状，海尔 COSMOPlat与在纺机行业数十年深耕细作和具有深入工艺基础的青岛纺机强强联合、跨界赋能，联合研发了纺机 智慧运维系统。'
+        }
+      ],
+      // tabs
+      tabIndex: 0,
+      currentContent: 'one',
+      point_left:140,
+      tabList: [
+        {
+          iconssrc: 'weigui', // 正常icons
+          iconssrchover:'shui', // hovericons
+          openurl: '',
+          number: 0,
+          component: 'one'
+        },
+        {
+          iconssrc: 'tubiao',
+          iconssrchover:'weigui',
+          openurl: '',
+          number: 1,
+          component: 'two'
+        },
+        {
+          iconssrc: 'KPI',
+          iconssrchover:'jichu',
+          openurl: '',
+          number: 2,
+          component: 'three'
+        },
+        {
+          iconssrc: 'jihua',
+          iconssrchover:'yunhang',
+          openurl: '',
+          number: 3,
+          component: 'four'
         }
       ]
     }
@@ -154,12 +207,19 @@ export default {
       //       });
       //     }
       //   });
+    },
+    // tabs
+    changeTab: function(tab) {
+      this.tabIndex = tab.number
+      this.currentContent = tab.component
+      this.point_left = 140 + tab.number*300
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+// @import '~assets/css/animate.css';
 .container-jjfa {
   background: url('../assets/img/index/jjfa-bg.png') no-repeat;
   background-size: 100% 100%;
@@ -245,6 +305,4 @@ export default {
 .zb {
   height: 200px;
 }
-
-
 </style>

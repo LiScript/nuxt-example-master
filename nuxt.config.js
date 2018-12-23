@@ -30,6 +30,7 @@ module.exports = {
   */
   css: [
     'element-ui/lib/theme-chalk/display.css', // 控制不同设备显示隐藏的样式
+    '~assets/css/animate.css',
     '~assets/css/common.less',
     'swiper/dist/css/swiper.css', // 轮播样式
   ],
