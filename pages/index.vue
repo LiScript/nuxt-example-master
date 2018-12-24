@@ -2,10 +2,15 @@
   <div>
     <banner/>
     <div class="banner-down">
-
+      <Looper/>
     </div>
     <!-- Tabs -->
-    <my-tabs :tabList="tabList" :tabIndex="tabIndex" :point_left="point_left" @changeTab="changeTab">
+    <my-tabs
+      :tabList="tabList"
+      :tabIndex="tabIndex"
+      :point_left="point_left"
+      @changeTab="changeTab"
+    >
       <keep-alive>
         <transition enter-active-class="animated fadeIn" mode="out-in">
           <component :is="currentContent"></component>
@@ -60,6 +65,7 @@ import Tabs from '~/components/tabs.vue'
 import Mapblack from '~/components/map/map-black.vue'
 import Mapwhite from '~/components/map/map-white.vue'
 import MyTabs from '~/components/tabs.vue'
+import Looper from '~/components/looper.vue'
 import Looperbgimg from '~/components/looperbgimg.vue'
 import One from './indextabs/one.vue'
 import Two from './indextabs/two.vue'
@@ -75,7 +81,8 @@ export default {
     two: Two,
     three: Three,
     four: Four,
-    Looperbgimg
+    Looperbgimg,
+    Looper
   },
   data() {
     return {
@@ -120,32 +127,32 @@ export default {
       // tabs
       tabIndex: 0,
       currentContent: 'one',
-      point_left:140,
+      point_left: 140,
       tabList: [
         {
           iconssrc: 'weigui', // 正常icons
-          iconssrchover:'shui', // hovericons
+          iconssrchover: 'shui', // hovericons
           openurl: '',
           number: 0,
           component: 'one'
         },
         {
           iconssrc: 'tubiao',
-          iconssrchover:'weigui',
+          iconssrchover: 'weigui',
           openurl: '',
           number: 1,
           component: 'two'
         },
         {
           iconssrc: 'KPI',
-          iconssrchover:'jichu',
+          iconssrchover: 'jichu',
           openurl: '',
           number: 2,
           component: 'three'
         },
         {
           iconssrc: 'jihua',
-          iconssrchover:'yunhang',
+          iconssrchover: 'yunhang',
           openurl: '',
           number: 3,
           component: 'four'
@@ -218,7 +225,7 @@ export default {
     changeTab: function(tab) {
       this.tabIndex = tab.number
       this.currentContent = tab.component
-      this.point_left = 140 + tab.number*300
+      this.point_left = 140 + tab.number * 300
     }
   }
 }
@@ -227,8 +234,8 @@ export default {
 <style lang="scss" scoped>
 // @import '~assets/css/animate.css';
 .banner-down {
-  background: #000000;
-  height: 80px;
+  // background: #000000;
+  // height: 200px;
 }
 .container-jjfa {
   background: url('../assets/img/index/jjfa-bg.png') no-repeat;
@@ -315,5 +322,4 @@ export default {
 .zb {
   height: 200px;
 }
-
 </style>

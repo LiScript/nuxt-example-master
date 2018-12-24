@@ -1,10 +1,26 @@
 <template>
   <div>
     <div class="myhover">
+      <div class="logo">
+        <nuxt-link to="/">
+        <img src="../assets/img/logo_lfz.png" height="60" width="60">
+        </nuxt-link>
+      </div>
       <div class="mynav">
         <div class="nav-contain">
-          <div class="header-list" v-for="(item,index) in loacal" :key="index" @mouseenter="enter(index)" @mouseleave="leave()">
-            <div class="pad-list" :class="{navhover:seen&&index==current}" @mouseenter="twohidd(item.sonList)" @click="location(item.navUrl)">
+          <div
+            class="header-list"
+            v-for="(item,index) in loacal"
+            :key="index"
+            @mouseenter="enter(index)"
+            @mouseleave="leave()"
+          >
+            <div
+              class="pad-list"
+              :class="{navhover:seen&&index==current}"
+              @mouseenter="twohidd(item.sonList)"
+              @click="location(item.navUrl)"
+            >
               <div>{{item.navName}}</div>
             </div>
             <div v-show="seen&&index==current" class="nav-area">
@@ -28,7 +44,6 @@
 
 <script>
 export default {
-
   data() {
     return {
       seen: false,
@@ -146,7 +161,7 @@ export default {
                   navUrl: '/product/micro/?productId=45',
                   sonList: []
                 },
-                 {
+                {
                   navName: '天河仿真云',
                   navUrl: '/product/micro/?productId=134',
                   sonList: []
@@ -344,7 +359,7 @@ export default {
                   navUrl: '/product/micro/?productId=124',
                   sonList: []
                 },
-                 {
+                {
                   navName: '大数据服务',
                   navUrl: '/product/micro/?productId=125',
                   sonList: []
@@ -370,7 +385,7 @@ export default {
                   navUrl: 'http://developer.dev.cosmoplat.com/#develop-tool',
                   sonList: []
                 },
-                 {
+                {
                   navName: '通用算法模型',
                   navUrl: 'http://developer.dev.cosmoplat.com/#algorithm',
                   sonList: []
@@ -396,7 +411,7 @@ export default {
                   navUrl: '/product/micro/?productId=113',
                   sonList: []
                 },
-                 {
+                {
                   navName: '智能网关CP3399',
                   navUrl: '/product/micro/?productId=111',
                   sonList: []
@@ -741,13 +756,19 @@ export default {
   &:hover {
     background-color: rgba(51, 51, 51, 1);
   }
+  .logo {
+    position: absolute;
+    left: 2%;
+    cursor: pointer;
+  }
   .mynav {
     top: 60px;
-    height: 50px;
+    height: 60px;
     width: 100%;
     z-index: 999;
     .nav-contain {
-      padding: 0px 24px;
+      padding: 5px 24px 5px 120px;
+      height: 100%;
       .header-list {
         display: inline-block;
         font-size: 14px;
@@ -756,7 +777,7 @@ export default {
           transition: all 0.4s ease;
         }
         .pad-list {
-          padding: 14px 24px;
+          padding: 18px 24px;
           font-size: 14px;
           color: #ffffff;
           line-height: 16px;
@@ -796,7 +817,6 @@ export default {
     }
   }
 }
-
 
 .nav-list-detile {
   display: inline-flex !important;

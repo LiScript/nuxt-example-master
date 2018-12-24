@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="de-banner">
-      <div v-swiper:mySwiper="swiperOption">
+      <div v-swiper="swiperOption">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="item in srclist" :key="item.id">
             <div v-if="item.imsrc" @click="location(item.openurl)">
@@ -99,12 +99,9 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .swiper-slide {
   cursor: pointer;
-}
-.swiper-pagination-bullet {
-  background: #fff !important;
 }
 /* 右按钮 */
 .swiper-button-next {
