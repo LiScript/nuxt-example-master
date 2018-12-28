@@ -25,7 +25,7 @@
       <div class="swiper-pagination"></div>
     </div>
     <div>
-      <el-button type="success" @click="test">成功按钮</el-button>
+      <el-button type="success" @click="test">测试轮播</el-button>
     </div>
   </div>
 </template>

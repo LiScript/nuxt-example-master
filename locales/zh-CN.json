@@ -1,0 +1,13 @@
+{
+    "links": {
+      "home": "家"
+    },
+    "home": {
+      "title": "欢迎",
+      "introduction": "这是个中文版本."
+    },
+    "about": {
+      "title": "关于",
+      "introduction": "..."
+    }
+  }

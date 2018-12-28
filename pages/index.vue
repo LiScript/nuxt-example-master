@@ -1,9 +1,13 @@
 <template>
   <div>
     <banner/>
+    <div>
+      <p class="testi18n">{{ $t('home.introduction') }}</p>
+    </div>
     <div class="banner-down">
       <Looper/>
     </div>
+    
     <!-- Tabs -->
     <my-tabs
       :tabList="tabList"
@@ -54,7 +58,7 @@
     <Looperbgimg/>
     <!-- 测试全局链接 -->
     <div class="zb">
-      <el-button type="success" @click="test">成功按钮</el-button>
+      <el-button type="success" @click="test">测接口</el-button>
     </div>
   </div>
 </template>
@@ -211,15 +215,6 @@ export default {
           this.loading = false
           this.$message.error('用户名或密码错误')
         })
-      // this.$alert('这是一段内容', '标题名称', {
-      //     confirmButtonText: '确定',
-      //     callback: action => {
-      //       this.$message({
-      //         type: 'info',
-      //         message: this.$baseUrl
-      //       });
-      //     }
-      //   });
     },
     // tabs
     changeTab: function(tab) {
@@ -232,6 +227,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.testi18n {
+  font-size: 48px;
+  color: red;
+}
 // @import '~assets/css/animate.css';
 .banner-down {
   // background: #000000;
