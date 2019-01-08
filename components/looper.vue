@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="swiper-container" v-swiper="swiperOption" ref="mySwiper">
-      <div class="swiper-wrapper" @mousemove="mousemove()" @mouseout="mouseout()">
+    <div class="swiper-container" v-swiper="swiperOption" ref="mySwiper" @mousemove="mousemove()" @mouseout="mouseout()">
+      <div class="swiper-wrapper">
         <div
           class="swiper-slide"
           v-for="(item,index) in jjfahy"
@@ -23,9 +23,6 @@
       <div class="swiper-button-prev my-button-hidden"></div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
-    </div>
-    <div>
-      <el-button type="success" @click="test">测试轮播</el-button>
     </div>
   </div>
 </template>
@@ -99,9 +96,6 @@ export default {
     mouseout() {
       this.$refs.mySwiper.swiper.autoplay.start()
     },
-    test() {
-      console.log(this.$refs.mySwiper.swiper.autoplay)
-    }
   },
   mounted() {
     //鼠标覆盖停止自动切换 有问题 页面多容器混淆
