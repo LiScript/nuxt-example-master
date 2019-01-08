@@ -41,7 +41,9 @@
       <div class="i18n">
           <el-button type="primary" @click="changezn()">切换中文版</el-button>
           <el-button type="primary" @click="changeen()">切换英文版</el-button>
-          <el-button type="primary" @click="goto()">登录</el-button>
+          <el-button type="primary" @click="goto()" v-if="!tel">点击登录</el-button>
+          <el-button type="primary" v-if="tel">登录成功</el-button>
+          <el-button type="primary" @click="logout()" v-if="tel">退出登录</el-button>
       </div>
     </div>
   </div>
@@ -49,6 +51,7 @@
 
 <script>
 import Cookies from 'js-cookie'
+import { removeToken } from '@/utils/auth'
 export default {
   data() {
     return {
@@ -730,6 +733,10 @@ export default {
       Cookies.set('language', 'en')
       location.reload() 
     },
+    logout () {
+      removeToken()
+      location.reload()
+    },
     goto(){
       this.$router.push({path: '/login/login2'})
     },
@@ -759,7 +766,13 @@ export default {
         }
       }
     }
-  }
+  },
+  // 获取vuex里面的token
+  computed: {
+    tel() {
+      return this.$store.state.tel
+    }
+  },
 }
 </script>
 

@@ -104,6 +104,7 @@ export default {
             //debugger
             if (res && res.code === 0) {
               setToken(res.token)
+              this.$store.commit('SET_Tel', res.token)
               console.log('请求成功，数据是:', res)
               this.$router.push({ path: this.redirect || '/' })
             } else {
