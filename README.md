@@ -27,4 +27,7 @@ $ npm  run build 线上测试环境
 $ npm  run g 线上正式环境
 #环境变量设置
 axios - env.js
+#中间件验证登录/验证是否登录
+middleware-userAuth
+使用Cookies(token)验证
 ```
