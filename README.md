@@ -21,4 +21,10 @@ $ yarn start
 $ yarn run generate
 ```
 ### 后期补充
-
+``` bash
+#打包发版
+$ npm  run build 线上测试环境
+$ npm  run g 线上正式环境
+#环境变量设置
+axios - env.js
+```
