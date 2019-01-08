@@ -11,6 +11,9 @@ const store = () => new Vuex.Store({
     SET_Tel: (state, tel) => {
       state.tel = tel
     },
+    REMOVE_Tel: (state) => {
+      state.tel = ''
+    },
   }
 })
 

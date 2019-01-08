@@ -731,11 +731,12 @@ export default {
     },
     changeen(){
       Cookies.set('language', 'en')
-      location.reload() 
+      this.$store.commit('REMOVE_Tel')
     },
     logout () {
       removeToken()
-      location.reload()
+      this.$store.commit('REMOVE_Tel')
+      // location.reload()
     },
     goto(){
       this.$router.push({path: '/login/login2'})
