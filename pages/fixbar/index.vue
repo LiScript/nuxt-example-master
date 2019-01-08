@@ -14,6 +14,8 @@
 </template>
 <script>
 export default {
+  layout: 'base',
+  middleware: 'userAuth',
   data() {
     return {
       isFixed: false, // bar浮动

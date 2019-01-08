@@ -41,6 +41,7 @@
       <div class="i18n">
           <el-button type="primary" @click="changezn()">切换中文版</el-button>
           <el-button type="primary" @click="changeen()">切换英文版</el-button>
+          <el-button type="primary" @click="goto()">登录</el-button>
       </div>
     </div>
   </div>
@@ -728,6 +729,9 @@ export default {
     changeen(){
       Cookies.set('language', 'en')
       location.reload() 
+    },
+    goto(){
+      this.$router.push({path: '/login/login2'})
     },
     twohidd(val) {
       if (val) {
