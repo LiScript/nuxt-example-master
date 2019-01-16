@@ -35,7 +35,7 @@
           <img :src="captchaPath" @click="getCaptcha()" alt="">
         </el-col>
       </el-row>
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogintest">登录</el-button>
     </el-form>
   </div>
 </template>
@@ -121,6 +121,11 @@ export default {
           return false
         }
       })
+    },
+    handleLogintest () {
+      setToken('Poli')
+      this.$store.commit('SET_Tel', 'Poli')
+      this.$router.push({ path: this.redirect || '/' })
     },
     // 获取验证码
     getCaptcha() {

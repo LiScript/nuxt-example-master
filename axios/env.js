@@ -8,9 +8,9 @@
 let baseUrl
 
 if (process.env.NODE_ENV === 'dev') {
-  baseUrl = 'https://www.cosmoplat.com/'
+  baseUrl = 'https://www.test.com/'
 } else {
-  baseUrl = 'http://pass.managerserver.dev.cosmoplat.com'
+  baseUrl = 'https://www.test.com/'
 }
 
 export {

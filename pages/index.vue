@@ -207,7 +207,7 @@ export default {
         pageSize: 3
       }
       this.$API
-        .post('api/zhizZix/list', params)
+        .post('api/Poli', params)
         .then(res => {
           console.log(res)
         })
