@@ -9,5 +9,16 @@
     "about": {
       "title": "关于",
       "introduction": "..."
+    },
+    "header": {
+      "dgmdz": "大规模定制",
+      "qdjd": "七大节点",
+      "jhdz": "交互定制",
+      "kfcx": "开放创新",
+      "jzyx": "精准营销",
+      "mkcg": "模块采购",
+      "znsc": "智能生产",
+      "zhwl": "智慧物流",
+      "zncp": "智能产品"
     }
   }

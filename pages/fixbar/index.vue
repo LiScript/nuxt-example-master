@@ -15,7 +15,7 @@
 <script>
 export default {
   layout: 'base',
-  middleware: 'userAuth',
+  // middleware: 'userAuth',
   data() {
     return {
       isFixed: false, // bar浮动
@@ -56,7 +56,7 @@ export default {
 .bar {
   width: 100%;
   height: 40px;
-  background: #f6f6f6;
+  background: #f0f3f6;
   margin-top: 50px;
   .leeft {
     padding: 10px 20px;

@@ -42,11 +42,7 @@ export default {
       //视频图片列表
       srclist: [
         {
-          videosrc: 'http://file.maker.haier.net/media/home12.mp4',
-          openurl: ''
-        },
-        {
-          videosrc: '',
+          videosrc: 'http://file.maker.haier.net/media/banner_wan.mp4',
           openurl: 'http://act.dev.cosmoplat.com/'
         },
         {
@@ -71,10 +67,6 @@ export default {
         }
       ],
       srclist2: [
-        {
-          videosrc: 'http://file.maker.haier.net/media/home12.mp4',
-          openurl: ''
-        },
         {
           videosrc: 'http://file.maker.haier.net/media/banner_wan.mp4',
           openurl: 'http://act.dev.cosmoplat.com/'

@@ -50,6 +50,9 @@ module.exports = {
     '~/plugins/svg-icon', // icons
     '~/plugins/i18n.js' // 国家化
   ],
+  router: {
+    middleware: 'i18n',
+  },
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios'
