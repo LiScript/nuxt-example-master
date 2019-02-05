@@ -18,7 +18,7 @@
 # 安装依赖包
 $ npm install
 # 启动
-$ nopm run dev
+$ npm run dev
 #打包发版
 $ npm  run build 线上测试环境
 $ npm  run g 线上正式环境
