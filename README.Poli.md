@@ -1,4 +1,3 @@
-[全屏幕](./README.Poli.md)
 # 基于NUXT的门户模板项目
 ``` bash
 # (https://nuxtjs.org) 源于个人-Poli
