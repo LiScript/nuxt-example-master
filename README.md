@@ -48,7 +48,7 @@ this.$API.post
 this.$API.get
 ```
 
-####NUXT框架前端开发规范
+###NUXT框架前端开发规范
 ``` bash
 #目录结构规范：
 
