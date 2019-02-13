@@ -51,23 +51,45 @@ this.$API.get
 ####NUXT框架前端开发规范
 ``` bash
 #目录结构：
-api - axios的公用接口管理（示例见pages-login-index.vue）
-assets - 存放静态文件
-            - img 存放图片，同一个页面的图片放在一个文件夹下，图片能复用就复用
-            - css 存放样式文件 media.less为整个项目的媒体查询文件，页面的适配统一在媒体查询中实现(单独页面里面不再写适配)；建议不同的开发者使用不同的媒体查询文件进行开发，进行适配开发
-            - svg 存放svg文件
-            - js 存放静态js
-axios - 存放axios配置文件，除链接地址可以配置外，其余项尽量不能修改
-components - 存放全部子组件，将所有的子组件存放在这个目录下，其他地方不可以存放子组件
-layouts - 存放项目的布局 目前存放的：admin为前台个人中心布局，base为无头尾布局（无header和footer），default为有头有尾布局（有header和footer），error（404页面）
-middleware - 存放项目的中间件进行项目的状态管理等（现存登录状态中间件判定）
-pages - 存放页面，Nuxt.js 框架读取该目录下所有的 .vue 文件并自动生成对应的路由配置
-plugins - 插件目录
-插件目录 plugins 用于组织那些需要在 根vue.js应用 实例化之前需要运行的 Javascript 插件。
-static - favicon.ico
-store - vuex操作
 
-nuxt.config.js - nuxt的配置文件
+   ├── .nuxt           框架原生配置内容
+   ├── api             公共axios请求
+   ├── assets          资源目录，这里的资源会被wabpack构建
+   │   ├── css             存放样式文件 media.less为整个项目的媒体查询文件，页面的适配统一在媒体查询中实现(单独页面里面不再写适配)；建议不同的开发者使用不同的媒体查询文件进行开发，进行适配开发
+   │   ├── img             存放图片，同一个页面的图片放在一个文件夹下，图片能复用就复用
+   │   ├── svg             存放svg文件，供svg-icon实用
+   │   └── video           存放video
+   ├── axios           存放axios配置文件，除链接地址可以配置外，其余项尽量不能修改
+   │   ├── env.js          配置编译环境和线上环境之间的切换
+   │   ├── http.js         axios的定义和引用
+   │   └── index.js        axios个性化配置
+   ├── components      存放全部公用子组件，将所有的子组件存放在这个目录下，其他地方不可以存放子组件
+   ├── layouts         存放项目的布局 目前存放的：admin为前台个人中心布局，base为无头尾布局（无header和footer），default为有头有尾布局（有header和footer），error（404页面）
+   ├── locales         i18n多语言文件
+   │   ├── en.json         英文环境下加载
+   │   ├── index.js        国际化调用 vuex使用
+   │   └── zh-CN.json      中文环境下加载
+   ├── middleware      存放项目的中间件进行项目的状态管理等（现存登录状态和多语言切换中间件判定）
+   │   ├── i18n.js         i18n多语言切换中间件
+   │   └── userAuth.js     登录状态验证中间件
+   ├── pages           存放页面，Nuxt.js 框架读取该目录下所有的 .vue 文件并自动生成对应的路由配置
+   │   ├── XXX             文件夹
+   │   └── index.vue       首页
+   ├── plugins         插件目录,实例化之前需要运行的 Javascript 插件, 在nuxt.config.js的plugins中引用 
+   │   ├── awesome-swiper.js    轮播图
+   │   ├── axios.js             axios
+   │   ├── element-ui.js        element-ui
+   │   ├── element-variables.scss   element-ui个性化样式
+   │   ├── i18n.js             多语言
+   │   ├── svg-icon.js         svg-icon组件
+   │   └── vue-lazyload.js     图片懒加载
+   ├── store            vuex
+   │   └── index.js        Vuex 状态树 
+   ├── utils            公用js
+   │   ├── auth.js          一些方法
+   │   ├── index.js         一些方法
+   │   └── utils.js         一些方法 
+   └── nuxt.config.js       nuxt的配置文件
 
 #Css开发：
 1、多用element-ui2.4.11版本及以上的组件样式，若需要修改 element-ui默认样式，请在单页面中使用scoped标签进行单页面的样式修改，不要全局修改；
@@ -77,6 +99,9 @@ nuxt.config.js - nuxt的配置文件
 5、可以通过为template的根节点添加不同class区别不同页面的样式
 
 #Js开发：
+为v-for设置键值
+ v-for="(todo,index) in todos"
+ :key="index"
 data：只加载和处理本vue及父子组件的数据，冗余数据请删除
 methods：写好注释，若牵扯element-ui相关方法开发请按照官方文档开发；
 合理利用生命周期钩子

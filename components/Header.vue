@@ -145,9 +145,9 @@ export default {
   methods: {
     // 切换到中文
     changezn() {
-      this.$confirm('此操作将切换到英文, 是否继续?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
+      this.$confirm('We go Chinese, yes or no?', '提示', {
+        confirmButtonText: 'yes',
+        cancelButtonText: 'no',
         type: 'warning'
       })
         .then(() => {
@@ -168,9 +168,26 @@ export default {
     },
     // 切换到英文
     changeen() {
-      Cookies.set('language', 'en')
-      this.$i18n.locale = 'en'
-      this.$router.go(0)
+      this.$confirm('此操作将切换到英文, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+        .then(() => {
+          Cookies.set('language', 'en')
+          this.$i18n.locale = 'en'
+          this.$router.go(0)
+          this.$message({
+            type: 'success',
+            message: '切换成功'
+          })
+        })
+        .catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消切换'
+          })
+        })
     },
     // 跳转首页
     gotoindex() {
