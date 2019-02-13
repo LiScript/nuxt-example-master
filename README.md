@@ -118,6 +118,7 @@ PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定
     - filter
     - computed
     - watch
+
 #注释规范
 1.公共组件使用说明
 2.各组件中重要函数或者类说明
@@ -176,8 +177,6 @@ PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定
 5.避免 this.$parent
 6.谨慎使用 this.$refs
 7.调试信息console.log() debugger 使用完及时删除
-
-
 
 #Html编码规范：
 1、布局请考虑好适配布局；
