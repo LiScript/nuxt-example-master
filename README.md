@@ -13,7 +13,7 @@
 
 # 具体使用方式见各种示例模块
 ```
-## Build Setup
+### Build Setup
 ``` bash
 # 安装依赖包
 $ npm install
@@ -48,7 +48,7 @@ this.$API.post
 this.$API.get
 ```
 
-###NUXT框架前端开发规范
+## NUXT框架前端开发规范
 ``` bash
 #目录结构规范：
 
