@@ -1,57 +1,9 @@
-# 基于NUXT的门户模板项目
+
+# NUXT框架前端开发规范
+
+## 目录结构规范：
+
 ``` bash
-# (https://nuxtjs.org) 源于个人-Poli
-
-# 主要用到的组件如下，依照顺引用于plugins文件夹
-
-# vue-awesome-swiper 轮播插件，支持手机端手势滑动
-# axios 前后交互 配置文件在 ～/axios 目录下
-# ui 使用element-ui  官网：http://element-cn.eleme.io/#/zh-CN
-# i18n 使用国际化组件
-# svg-icon svg引用
-# vue-lazyload 图片懒加载 
-
-# 具体使用方式见各种示例模块
-```
-### Build Setup
-``` bash
-# 安装依赖包
-$ npm install
-# 启动
-$ npm run dev
-#打包发版
-$ npm  run build 线上测试环境
-$ npm  run g 线上正式环境
-```
-### 各种示例
-``` bash
-# vue-awesome-swiper
-详见示例 目录：(components/Videobanner)
-# svg使用示例
-将svg文件放到assets/svg目录下
-iconClass写svg名字
-可以自定义样式
-！！直接组件中使用，不需要引入子组件！！
-<svg-icon iconClass="cosmo_logo" style="width: 125px;height: 40px;"/>
-# vue-lazyload
-v-lazy= 替代 :src= 可实现静态图片懒加载
-# i18n 
-将数据维护进不同的json 目录：(locales/en~zh-CN)
-在data中使用this.$t('header.qdjd')
-在html中使用{{$t('header.qdjd')}}
-#axios环境变量设置-多环境部署准备
-axios - env.js
-#axios拦截设置
-axios - http.js
-#axios示例get.post
-this.$API.post
-this.$API.get
-```
-
-## NUXT框架前端开发规范
-``` bash
-#目录结构规范：
-
    ├── .nuxt           框架原生配置内容
    ├── api             公共axios请求
    ├── assets          资源目录，这里的资源会被wabpack构建
@@ -90,13 +42,18 @@ this.$API.get
    │   ├── index.js         一些方法
    │   └── utils.js         一些方法 
    └── nuxt.config.js       nuxt的配置文件
+```
 
-#基于组件化开发规范
+## 基于组件化开发规范
+
+``` bash
 单文件系统，样式局部作用域
 基本组成结构：<template/> <script/> <style scoped/>
 组件注册方式：1）公共组件全局注册 2）其余组件局部注册
+```
+## 组件命名规范
 
-#组件命名规范
+``` bash
 当注册组件 (或者 prop) 时，可以使用 kebab-case (短横线分隔命名)、camelCase (驼峰式命名) 或 PascalCase (单词首字母大写命名)。
 PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定。
  1、有意义的名词、简短、具有可读性
@@ -104,8 +61,11 @@ PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定
  3、公共组件命名以公司名称简拼为命名空间(cosmo-xx.vue)
  4、文件夹命名主要以功能模块代表命名
  同时还需要注意：必须符合自定义元素规范: 使用连字符分隔单词，切勿使用保留字。cosmo- 前缀作为命名空间: 如果非常通用的话可使用一个单词来命名，这样可以方便于其它项目里复用。 
+```
 
-#vue文件方法声明顺序
+## vue文件方法声明顺序
+
+``` bash
     - components   
     - props    
     - data     
@@ -118,8 +78,11 @@ PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定
     - filter
     - computed
     - watch
+```
 
-#注释规范
+## 注释规范
+
+``` bash
 1.公共组件使用说明
 2.各组件中重要函数或者类说明
 3.复杂的业务逻辑处理说明
@@ -142,8 +105,11 @@ PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定
       *  <hbTable :title="title" :columns="columns" :tableData="tableData"></hbTable>
           */
        -->
+```
 
-#Css编码规范：
+## Css编码规范：
+
+``` bash
 1.选择器尽可能简单,每个选择器和声明都要独立新行。
     例：能使用 .test 别使用 div.test
 2.Class 和 ID 的命名应该语义化，通过看名字就知道是干嘛的；多个单词用连接线 - 连接。
@@ -159,8 +125,31 @@ PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定
 4、多用element-ui2.4.11版本及以上的组件样式，若需要修改 element-ui默认样式，请在单页面中使用scoped标签进行单页面的样式修改，不要全局修改；
 5、样式绑定仅使用class进行绑定，不建议使用id进行样式绑定，不建议使用style进行内联样式编写；
 6、可以通过为template的根节点添加不同class区别不同页面的样式
+```
 
-#Js编码规范：
+## Css编码规范：
+
+``` bash
+1.选择器尽可能简单,每个选择器和声明都要独立新行。
+    例：能使用 .test 别使用 div.test
+2.Class 和 ID 的命名应该语义化，通过看名字就知道是干嘛的；多个单词用连接线 - 连接。
+3.属性缩写
+    例：
+    // 反例
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+
+    // 正例
+    border: 1px solid #ccc;
+4、多用element-ui2.4.11版本及以上的组件样式，若需要修改 element-ui默认样式，请在单页面中使用scoped标签进行单页面的样式修改，不要全局修改；
+5、样式绑定仅使用class进行绑定，不建议使用id进行样式绑定，不建议使用style进行内联样式编写；
+6、可以通过为template的根节点添加不同class区别不同页面的样式
+```
+
+## Js编码规范：
+
+``` bash
 1.使用ES6风格编码源码
     建议不再使用 var,而使用 let / const
     定义变量使用let ,定义常量使用const
@@ -177,8 +166,11 @@ PascalCase 是最通用的声明约定而 kebab-case 是最通用的使用约定
 5.避免 this.$parent
 6.谨慎使用 this.$refs
 7.调试信息console.log() debugger 使用完及时删除
+```
 
-#Html编码规范：
+## Html编码规范：
+
+``` bash
 1、布局请考虑好适配布局；
 2、使用element-ui的Layout 布局进行基础的栅格布局；
 3、注意element不同元素闭包与嵌套
