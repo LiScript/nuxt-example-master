@@ -1,5 +1,5 @@
 [ 开发规范 ](./README.Poli.md)
-[ 开发规范 ](./README.svg.md)
+[ svg ](./README.svg.md)
 # 基于NUXT的门户模板项目
 ``` bash
 # (https://nuxtjs.org) 源于个人-Poli
