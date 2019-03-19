@@ -20,9 +20,9 @@
     </my-tabs>
     <Mapblack/>
     <Mapwhite/>
+    <NumberGrow :value="numberadd"></NumberGrow>
     <Solution/>
     <Looperbgimg/>
-    <NumberGrow :value="numberadd"></NumberGrow>
   </div>
 </template>
 
