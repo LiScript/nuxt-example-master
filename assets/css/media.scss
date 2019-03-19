@@ -1,4 +1,4 @@
-@import '~assets/css/base.less';
+
 .de-container {
     // padding: 0 15px;
     margin: 0 auto;
@@ -9,14 +9,14 @@
 @media (max-width:767px) {}
 
 // ipad竖屏-->sm
-@media (min-width:@widthsm) and (max-width:@widthmd) {}
+@media (min-width:$widthsm) and (max-width:$widthmd) {}
 
 // pc-->md
 // 在超过pad屏之后
-@media (min-width:@widthmd) {}
+@media (min-width:$widthmd) {}
 
 // pc-->lg
-@media (min-width:@widthlg) {
+@media (min-width:$widthlg) {
     .container {
         width: 1200px;
         margin: 0 auto;

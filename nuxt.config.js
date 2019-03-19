@@ -36,7 +36,7 @@ module.exports = {
   css: [
     'element-ui/lib/theme-chalk/display.css', // 控制不同设备显示隐藏的样式
     '~assets/css/animate.css',
-    '~assets/css/common.less',
+    '~assets/css/common.scss',
     'swiper/dist/css/swiper.css', // 轮播样式
   ],
   plugins: [
@@ -58,6 +58,7 @@ module.exports = {
     '@nuxtjs/axios'
   ],
   build: {
+    styleResources : {scss : './assets/css/base.scss',}, // 全局样式
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {

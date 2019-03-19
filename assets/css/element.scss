@@ -1,0 +1,99 @@
+
+
+// 富文本
+.ql-editor{
+    img{
+      width: auto !important;
+      max-width: 100% !important;
+    }
+    strong{
+      font-weight: bold;
+    }
+    em{
+      font-style: italic;
+    }
+    u{
+      text-decoration: underline;
+    }
+    s{
+      text-decoration: line-through;
+    }
+  }
+  
+  // 重置element样式
+  // .el-button--default{
+  //   color: @colorF;
+  //   &:focus, &:hover{
+  //     color: @red;
+  //     border-color: @red;
+  //   }
+  // }
+  // .el-button--danger{
+  //   background: @red;
+  //   border-color: @red;
+  //   &:focus, &:hover{
+  //     background: @redHover;
+  //     border-color: @redHover;
+  //   }
+  // }
+  
+  // input.el-input__inner, textarea.el-textarea__inner{
+  //   background-color: @bg;
+  //   border-color: @colorBorder;
+  //   .border-radius(0px);
+  //   &:focus{
+  //     border-color: #667282;
+  //   }
+  // }
+  // input[type="file"].el-upload__input{
+  //   display: none;
+  // }
+  
+  // .el-select-dropdown__item{
+  //   &.hover{
+  //     background: @redHoverF;
+  //   }
+  //   &.selected{
+  //     background: @red;
+  //   }
+  //   &.selected.hover{
+  //     background: @redHover;
+  //   }
+  // }
+  
+  // .el-pager{
+  //   li{
+  //     font-weight: normal;
+  //     &:hover{
+  //       color: @red;
+  //     }
+  //     &.active{
+  //       color: #fff;
+  //       background-color: @red;
+  //       border-color: @red;
+  //       &:hover{
+  //         color: #fff;
+  //       }
+  //     }
+  //   }
+  // }
+  
+  // .el-pagination{
+  //   button:hover{
+  //     color: @red;
+  //   }
+  // }
+  
+  // .el-form-item.is-success .el-input__inner,
+  // .el-form-item.is-success .el-input__inner:focus,
+  // .el-form-item.is-success .el-textarea__inner,
+  // .el-form-item.is-success .el-textarea__inner:focus {
+  //   border-color: #ddd;
+  // }
+  // .el-select-dropdown__item.selected{
+  //   color: #fff;
+  //   font-weight: normal;
+  // }
+  // .el-cascader-menu__item.is-active{
+  //   color: #fff;
+  // }

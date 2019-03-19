@@ -1,17 +1,16 @@
-@import '~assets/css/main.less';
-@import '~assets/css/base.less';
-@import '~assets/css/element.less';
+@import '~assets/css/main.scss';
+@import '~assets/css/element.scss';
 // 图片懒加载
 [lazy=loading] {
   background-image: url('~assets/img/loading.jpg') !important;
-  background-color: @colorLazy;
+  background-color: $colorLazy;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60% !important;
 }
 [lazy=error] {
   background-image: url('~assets/img/error.jpg') !important;
-  background-color: @colorLazy;
+  background-color: $colorLazy;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60% !important;
@@ -19,4 +18,4 @@
 [lazy=loaded] {
 }
 
-@import '~assets/css/media.less';
+@import '~assets/css/media.scss';
