@@ -12,6 +12,7 @@
           :iconClass="tabIndex == tab.number ? tab.iconssrchover : tab.iconssrc"
           class="icons"
         />
+        <div>{{tab.title}}</div>
       </el-col>
       <div class="point" :style="{left:point_left + 'px'}"></div>
     </el-row>

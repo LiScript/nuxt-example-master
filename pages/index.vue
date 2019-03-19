@@ -63,32 +63,36 @@ export default {
       point_left: 140,
       tabList: [
         {
-          iconssrc: 'weigui', // 正常icons
-          iconssrchover: 'shui', // hovericons
+          iconssrc: 'index001', // 正常icons 515151
+          iconssrchover: 'index001_hover', // hovericons ff9600
           openurl: '',
           number: 0,
-          component: 'one'
+          component: 'one',
+          title:'一个'
         },
         {
-          iconssrc: 'tubiao',
-          iconssrchover: 'weigui',
+          iconssrc: 'index002',
+          iconssrchover: 'index002_hover',
           openurl: '',
           number: 1,
-          component: 'two'
+          component: 'two',
+          title:'两个'
         },
         {
-          iconssrc: 'KPI',
-          iconssrchover: 'jichu',
+          iconssrc: 'index003',
+          iconssrchover: 'index003_hover',
           openurl: '',
           number: 2,
-          component: 'three'
+          component: 'three',
+          title:'三个'
         },
         {
-          iconssrc: 'jihua',
-          iconssrchover: 'yunhang',
+          iconssrc: 'index004',
+          iconssrchover: 'index004_hover',
           openurl: '',
           number: 3,
-          component: 'four'
+          component: 'four',
+          title:'四个'
         }
       ]
     }
