@@ -1,6 +1,7 @@
 <template>
   <div>
-    <banner/>
+    <!-- <banner/> -->
+    <Goodbanner/>
     <div>
       <p class="testi18n">{{ $t('home.introduction') }}</p>
     </div>
@@ -28,6 +29,7 @@
 
 <script>
 import Banner from '~/components/Videobanner.vue'
+import Goodbanner from '~/components/banner.vue'
 import Solution from '~/components/solution.vue' // banner
 import NumberGrow from '~/components/number.vue' // 数字滚动
 import Tabs from '~/components/tabs.vue'
@@ -42,6 +44,7 @@ import Four from './indextabs/four.vue'
 export default {
   components: {
     Banner,
+    Goodbanner,
     Mapblack,
     Mapwhite,
     MyTabs,
