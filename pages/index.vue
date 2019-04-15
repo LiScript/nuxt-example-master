@@ -22,6 +22,15 @@
     <Mapblack/>
     <Mapwhite/>
     <NumberGrow :value="numberadd"></NumberGrow>
+    <!-- 视察背景 -->
+    <div class="de-container">
+      <div class="fixed-bg" v-lazy:background-image="{src: bgurl}">
+        <div class="sologan">
+          <div class="fixed-h1-add">将质量贯穿产品全生命周期</div>
+          <div class="fixed-h1-add2">重塑质量，推动以质量为核心的智能制造</div>
+        </div>
+      </div>
+    </div>
     <Solution/>
     <Looperbgimg/>
   </div>
@@ -62,6 +71,7 @@ export default {
       activejjfa: 1,
       // tabs
       tabIndex: 0,
+      bgurl: require('../assets/img/index/fixedbg.png'), // 视差图片
       currentContent: 'one',
       point_left: 140,
       tabList: [
@@ -71,7 +81,7 @@ export default {
           openurl: '',
           number: 0,
           component: 'one',
-          title:'一个'
+          title: '一个'
         },
         {
           iconssrc: 'index002',
@@ -79,7 +89,7 @@ export default {
           openurl: '',
           number: 1,
           component: 'two',
-          title:'两个'
+          title: '两个'
         },
         {
           iconssrc: 'index003',
@@ -87,7 +97,7 @@ export default {
           openurl: '',
           number: 2,
           component: 'three',
-          title:'三个'
+          title: '三个'
         },
         {
           iconssrc: 'index004',
@@ -95,7 +105,7 @@ export default {
           openurl: '',
           number: 3,
           component: 'four',
-          title:'四个'
+          title: '四个'
         }
       ]
     }
@@ -133,5 +143,28 @@ export default {
 
 .zb {
   height: 200px;
+}
+.fixed-bg {
+  height: 300px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  .sologan {
+    padding-top: 64px;
+    .fixed-h1-add {
+      font-size: 36px;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .fixed-h1-add2 {
+      font-size: 18px;
+      color: #ffffff;
+      padding-top: 0px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
 }
 </style>

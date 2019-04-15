@@ -2,9 +2,11 @@
   <div>
     <Header/>
     <div class="zpContainer">
-    <nuxt/>
+      <nuxt/>
     </div>
-     <div class="page-component-up" v-show="isGoTop" @click="goTop()"><i class="el-icon-caret-top"></i></div>
+    <div class="page-component-up" v-show="isGoTop" @click="goTop()">
+      <i class="el-icon-caret-top"></i>
+    </div>
     <Footer/>
   </div>
 </template>
@@ -25,32 +27,85 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
   },
   created() {
-    if ( process.browser && process.env.NODE_ENV === 'production' ) {
-        document.oncontextmenu = (e) => {
-          // let path = e.path
-          // 解决火狐和safari兼容问题
-          const path = e.path || (e.composedPath && e.composedPath());
-          let isBoolean = false
-          path.forEach(item => {
-            if(item.className === 'ql-editor ql-blank' || item.className === 'ql-editor') {
-              isBoolean = true
-            }
-          })
-          return isBoolean
-        }
-        document.onselectstart = (e) => {
-          // let path = e.path
-          // 解决火狐和safari兼容问题
-          const path = e.path || (e.composedPath && e.composedPath());
-          let isBoolean = false
-          path.forEach(item => {
-            if(item.className === 'ql-editor ql-blank' || item.className === 'ql-editor') {
-              isBoolean = true
-            }
-          })
-          return isBoolean
-        }
+    if (process.browser && process.env.NODE_ENV === 'production') {
+      document.oncontextmenu = e => {
+        // let path = e.path
+        // 解决火狐和safari兼容问题
+        const path = e.path || (e.composedPath && e.composedPath())
+        let isBoolean = false
+        path.forEach(item => {
+          if (
+            item.className === 'ql-editor ql-blank' ||
+            item.className === 'ql-editor'
+          ) {
+            isBoolean = true
+          }
+        })
+        return isBoolean
       }
+      document.onselectstart = e => {
+        // let path = e.path
+        // 解决火狐和safari兼容问题
+        const path = e.path || (e.composedPath && e.composedPath())
+        let isBoolean = false
+        path.forEach(item => {
+          if (
+            item.className === 'ql-editor ql-blank' ||
+            item.className === 'ql-editor'
+          ) {
+            isBoolean = true
+          }
+        })
+        return isBoolean
+      }
+    }
+    // 鼠标点击事件文字滚动
+    var fnTextPopup = function(arr, options) {
+      // arr参数是必须的
+      if (!arr || !arr.length) {
+        return
+      }
+      // 主逻辑
+      var index = 0
+      document.documentElement.addEventListener('click', function(event) {
+        var x = event.pageX,
+          y = event.pageY
+        var eleText = document.createElement('span')
+        eleText.className = 'text-popup'
+        this.appendChild(eleText)
+        if (arr[index]) {
+          eleText.innerHTML = arr[index]
+        } else {
+          index = 0
+          eleText.innerHTML = arr[0]
+        }
+        // 动画结束后删除自己
+        eleText.addEventListener('animationend', function() {
+          eleText.parentNode.removeChild(eleText)
+        })
+        // 位置
+        eleText.style.left = x - eleText.clientWidth / 2 + 'px'
+        eleText.style.top = y - eleText.clientHeight + 'px'
+        // index递增
+        index++
+      })
+    }
+
+    fnTextPopup([
+      '富强',
+      '民主',
+      '文明',
+      '和谐',
+      '自由',
+      '平等',
+      '公正',
+      '法治',
+      '爱国',
+      '敬业',
+      '诚信',
+      '友善'
+    ])
+    // 鼠标点击事件文字滚动
   },
   methods: {
     goTop: function() {
@@ -130,7 +185,28 @@ html {
   color: #fff;
   background-color: #35495e;
 }
-.zpContainer{
+.zpContainer {
   min-height: 80vh;
+}
+/* 鼠标点击事件文字滚动 */
+.text-popup {
+  animation: textPopup 1s;
+  color: red;
+  user-select: none;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 99;
+}
+@keyframes textPopup {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+  }
 }
 </style>

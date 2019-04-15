@@ -2,12 +2,16 @@
   <div
     v-swiper:mySwiper="swiperOption"
     :style="{height:bannerHeight +'px',width:bannerwidth + 'px'}"
+    ref="solution"
   >
-    <div class="swiper-wrapper">;
+    <div class="swiper-wrapper">
+      ;
       <div
         class="swiper-slide"
         v-for="(item,index) in jjfahy"
         :key="index"
+        @mouseenter="stopswiper()"
+        @mouseleave="startswiper()"
       >
         <div class="jjfa-bg">
           <div>
@@ -58,12 +62,12 @@ export default {
           titlep1: 123123131,
           titlep2: 12312312
         }
-        
       ],
       swiperOption: {
         loop: true,
         slidesPerView: 5,
         spaceBetween: 12,
+        autoplay: true,
         navigation: {
           nextEl: '.swiper-button-next', //前进按钮的css选择器或HTML元素。
           prevEl: '.swiper-button-prev' //后退按钮的css选择器或HTML元素。
@@ -79,6 +83,20 @@ export default {
           loadPrevNextAmount: 2
         }
       }
+    }
+  },
+  computed: {
+    solutionSwiper() {
+      // mySwiper 是要绑定到标签中的ref属性
+      return this.$refs.solution.swiper
+    }
+  },
+  methods: {
+    stopswiper() {
+      this.mySwiper.autoplay.stop()
+    },
+    startswiper() {
+      this.mySwiper.autoplay.start()
     }
   }
 }

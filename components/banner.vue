@@ -85,19 +85,21 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
 /* 按钮样式 等待调整 */
-.swiper-pagination-bullet {
-  width: 20px !important;
-  height: 20px !important;
-  display: inline-block !important;
-  border-radius: 100% !important;
-  background: #fff !important;
-  margin: 0 5px !important;
-}
-.swiper-pagination-bullets {
-  bottom: 30px !important;
-  left: 36% !important;
+.banner {
+  .swiper-pagination-bullets {
+    bottom: 30px !important;
+    left: 36% !important;
+    .swiper-pagination-bullet {
+      width: 20px !important;
+      height: 20px !important;
+      display: inline-block !important;
+      border-radius: 100% !important;
+      background: #fff !important;
+      margin: 0 5px !important;
+    }
+  }
 }
 </style>
 
