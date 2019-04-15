@@ -7,14 +7,22 @@ $fs-lg: 18px;
 $colorbg: #24b2ca; // 海克斯康浅颜色
 $colorbg2: #2395af; // 海克斯康深颜色
 $colorbg3: #367fa9; // 海克斯康很深颜色
-$colorbg4: rgba(28,35,39,0.5); // 下拉菜单
+$colorbg_nav: #1c2327; // 导航颜色 工业设计史上的黑
+$colorbg_nav_but:#9c9c9c; // 登陆注册
+
+// $colorbg: #24b2ca; // 海克斯康浅颜色
+// $colorbg2: #2395af; // 海克斯康深颜色
+// $colorbg3: #367fa9; // 海克斯康很深颜色
+$colorbg4: rgba(28,35,39,0.7); // 下拉菜单
+$colorbg5:rgba(28,35,39,1);
+$colorbg6: rgba(51, 51, 51, 0.5); 
 $colorLazy: #e0e0e0; // 懒加载颜色
 $colorBorder: #ccc; // 边框颜色
 $colorF: #757575; // 浅颜色
 $colorI: #999; // icon浅颜色
 $colorA: #202020; // a链接颜色
-$colorH: #000; // 鼠标滑过颜色
-$bg: #fafafa; // body灰颜色背景
+$colorH: #333; // 鼠标滑过颜色
+$bg: #f5f5f6; // body灰颜色背景
 $widthxs: 480px;
 $widthsm: 768px;
 $widthmd: 1025px;
