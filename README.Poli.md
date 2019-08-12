@@ -44,7 +44,7 @@
    └── nuxt.config.js       nuxt的配置文件
 ```
 
-## SQ-fast目录结构规范：
+## vue-fast-example目录结构规范：
 
 ``` bash
    ├── build                    构建脚本目录
@@ -94,8 +94,8 @@
 ## 框架要求
 ### 1、前端框架
 ``` bash
-1）web 端建议⽤用 nuxt 框架，即使没有做服务端渲染，也可静态化。[官⽹网地址]https://nuxtjs.org/
-2）管理理端建议⽤用 SQ-fast，保持跟主系统⻛风格统⼀一。地址待发布
+1）web 端建议⽤用 nuxt 框架，即使没有做服务端渲染，也可静态化。[官⽹网地址](https://nuxtjs.org/)
+2）管理理端建议⽤用 vue-fast-example，保持跟主系统⻛风格统⼀一。[项目地址](https://github.com/LiScript/vue-fast-example)
 ```
 ### 2、 UI 框架
 ``` bash
