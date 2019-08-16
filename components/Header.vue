@@ -233,6 +233,11 @@ export default {
           navName: '测试多语言',
           navUrl: '/testlang',
           index: 7
+        },
+        {
+          navName: '小组件测试',
+          navUrl: '/sometest',
+          index: 7
         }
       ]
     }
